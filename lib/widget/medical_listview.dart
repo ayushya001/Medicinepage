@@ -1,8 +1,10 @@
 import 'package:flutter/material.dart';
 import 'package:google_fonts/google_fonts.dart';
+import 'package:medicalpage/data/models/medical_model.dart';
 
 class MedicalListView extends StatefulWidget {
-  const MedicalListView({super.key});
+  final MedicalStoreModel medicalStore;
+  const MedicalListView({super.key, required this.medicalStore});
 
   @override
   State<MedicalListView> createState() => _MedicalListViewState();
@@ -15,7 +17,6 @@ class _MedicalListViewState extends State<MedicalListView> {
     return Padding(
       padding: const EdgeInsets.only(bottom: 25.0),
       child: Container(
-        //height: mediaQuery.size.height * 0.15,
         height: 140,
         width: mediaQuery.size.width,
         decoration: BoxDecoration(
@@ -33,9 +34,9 @@ class _MedicalListViewState extends State<MedicalListView> {
                 Container(
                   height: mediaQuery.size.height,
                   width: mediaQuery.size.width * 0.38,
-                  decoration: const BoxDecoration(
+                  decoration: BoxDecoration(
                     image: DecorationImage(
-                      image: AssetImage('assets/images/medicalstore.jpg'),
+                      image: NetworkImage(widget.medicalStore.imageUrl),
                       fit: BoxFit.cover,
                     ),
                   ),
@@ -47,7 +48,7 @@ class _MedicalListViewState extends State<MedicalListView> {
                   mainAxisAlignment: MainAxisAlignment.center,
                   children: [
                     Text(
-                      'Medical Store',
+                      widget.medicalStore.store,
                       maxLines: 1,
                       overflow: TextOverflow.ellipsis,
                       textDirection: TextDirection.ltr,
@@ -64,7 +65,7 @@ class _MedicalListViewState extends State<MedicalListView> {
                     SizedBox(
                       width: mediaQuery.size.width * 0.45,
                       child: Text(
-                        'E-13, South Extension Market, Part-II, New Delhi',
+                        widget.medicalStore.address,
                         maxLines: 2,
                         overflow: TextOverflow.visible,
                         textDirection: TextDirection.ltr,
@@ -131,7 +132,7 @@ class _MedicalListViewState extends State<MedicalListView> {
                       ),
                       const SizedBox(width: 2),
                       Text(
-                        '4.7',
+                        widget.medicalStore.rating,
                         maxLines: 1,
                         overflow: TextOverflow.visible,
                         textDirection: TextDirection.ltr,

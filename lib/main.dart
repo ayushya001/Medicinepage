@@ -1,15 +1,27 @@
+import 'package:cloud_firestore/cloud_firestore.dart';
+import 'package:firebase_core/firebase_core.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter/services.dart';
+import 'package:medicalpage/firebase_options.dart';
 import 'package:medicalpage/pages/fileOpening.dart';
+import 'package:medicalpage/pages/medical_store_page.dart';
 import 'package:medicalpage/pages/medicine3.dart';
-
 import 'pages/congratspage.dart';
 
-void main() {
+void main() async {
+  WidgetsFlutterBinding.ensureInitialized();
+  await Firebase.initializeApp(
+    options: DefaultFirebaseOptions.currentPlatform,
+  );
+
+  FirebaseFirestore.instance.settings = const Settings(
+    persistenceEnabled: false,
+  );
   SystemChrome.setSystemUIOverlayStyle(SystemUiOverlayStyle.light.copyWith(
     statusBarColor: Colors.white,
     statusBarIconBrightness: Brightness.dark,
   ));
+
   runApp(const MyApp());
 }
 
@@ -21,13 +33,7 @@ class MyApp extends StatelessWidget {
   Widget build(BuildContext context) {
     return MaterialApp(
       debugShowCheckedModeBanner: false,
-      routes: {
-        "/" : (_)=> FileUploadScreen()
-
-      },
-
+      routes: {"/": (_) => MedicalStorePage()},
     );
-
   }
 }
-
