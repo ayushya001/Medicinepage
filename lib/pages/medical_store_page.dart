@@ -1,7 +1,12 @@
 import 'package:flutter/material.dart';
 import 'package:google_fonts/google_fonts.dart';
+<<<<<<< HEAD
 import 'package:medicalpage/widget/medical_listview.dart';
 import 'package:medicalpage/widget/search_widget.dart';
+=======
+import 'package:medicalpage/widget/Searchwidget.dart';
+import 'package:medicalpage/widget/medicallistview.dart';
+>>>>>>> 30168b7 (adding_customfile)
 
 class MedicalStorePage extends StatefulWidget {
   const MedicalStorePage({super.key});
@@ -100,4 +105,8 @@ class _MedicalStorePageState extends State<MedicalStorePage> {
       ),
     );
   }
+<<<<<<< HEAD
 }
+=======
+}
+>>>>>>> 30168b7 (adding_customfile)

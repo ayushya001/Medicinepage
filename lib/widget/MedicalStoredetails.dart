@@ -1,5 +1,7 @@
-import 'package:auto_size_text/auto_size_text.dart';
 import 'package:flutter/material.dart';
+
+
+import 'package:auto_size_text/auto_size_text.dart';
 import 'package:google_fonts/google_fonts.dart';
 
 class Medicalstoredetails extends StatelessWidget {
@@ -60,32 +62,32 @@ class Medicalstoredetails extends StatelessWidget {
           ),
         ),
         Align(
-          alignment: Alignment.centerRight,
-          child: Container(
-            height: mq.height*0.03,
-            width: mq.width*0.12,
-            decoration: BoxDecoration(
-                color: Color(0xFF005473),
-              borderRadius: BorderRadius.all(Radius.circular(3))
-            ),
-            child: Padding(
-              padding:  EdgeInsets.only(left: 2,right: 2),
-              child: Row(
-                children: [
-                  Icon(Icons.star,size: 16,color: Colors.white,),
-                  AutoSizeText(
-                    "4.7",
-                    style: GoogleFonts.inter(
-                      fontSize: 13,
-                      fontWeight: FontWeight.w600,
-                      color: Colors.white
-                    ),
-                    maxLines: 1,
-                  ),
-                ],
+            alignment: Alignment.centerRight,
+            child: Container(
+              height: mq.height*0.03,
+              width: mq.width*0.12,
+              decoration: BoxDecoration(
+                  color: Color(0xFF005473),
+                  borderRadius: BorderRadius.all(Radius.circular(3))
               ),
-            ),
-          )
+              child: Padding(
+                padding:  EdgeInsets.only(left: 2,right: 2),
+                child: Row(
+                  children: [
+                    Icon(Icons.star,size: 16,color: Colors.white,),
+                    AutoSizeText(
+                      "4.7",
+                      style: GoogleFonts.inter(
+                          fontSize: 13,
+                          fontWeight: FontWeight.w600,
+                          color: Colors.white
+                      ),
+                      maxLines: 1,
+                    ),
+                  ],
+                ),
+              ),
+            )
         ),
         Align(
           alignment: Alignment.centerLeft,

@@ -1,11 +1,11 @@
 import 'package:flutter/material.dart';
 import 'package:flutter/services.dart';
-import 'package:medicalpage/pages/fileOpening.dart';
+import 'package:medicalpage/pages/medical_store_page.dart';
 import 'package:medicalpage/pages/medicine3.dart';
 
-import 'pages/congratspage.dart';
 
-void main() {
+void main() async {
+  WidgetsFlutterBinding.ensureInitialized();
   SystemChrome.setSystemUIOverlayStyle(SystemUiOverlayStyle.light.copyWith(
     statusBarColor: Colors.white,
     statusBarIconBrightness: Brightness.dark,
@@ -22,7 +22,8 @@ class MyApp extends StatelessWidget {
     return MaterialApp(
       debugShowCheckedModeBanner: false,
       routes: {
-        "/" : (_)=> FileUploadScreen()
+        // "/" : (_)=> MedicalStorePage()
+        "/" : (_)=> Medicine3()
 
       },
 

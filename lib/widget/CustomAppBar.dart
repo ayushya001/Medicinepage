@@ -16,7 +16,12 @@ class CustomAppBar extends StatelessWidget implements PreferredSizeWidget {
         padding: EdgeInsets.only(left:mq.width*0.08),
         child: Row(
           children: [
-            Icon(Icons.arrow_back_ios_new,color: Colors.black,size: 24,),
+            InkWell(
+              onTap: (){
+                Navigator.pop(context);
+              },
+                child: Icon(Icons.arrow_back_ios_new,color: Colors.black,size: 24,)
+            ),
             SizedBox(width: mq.width*0.23,),
             Text("Medicine",
             style: GoogleFonts.roboto(
